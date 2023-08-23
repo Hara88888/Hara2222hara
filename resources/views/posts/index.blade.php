@@ -7,8 +7,6 @@
     </head>
     <body>
         <h1>ブログ投稿一覧</h1>
-        <p>タイトル</p>
-        <p>内容</p>
         <div class='posts'>
             @foreach($posts as $post)
             <div class='post'>
