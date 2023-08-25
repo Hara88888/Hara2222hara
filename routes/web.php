@@ -17,3 +17,4 @@ Route::get('/', [PostController::class,'index'])->name('post.index');
 
 Route::get('/show/{id}',[PostController::class,'show'])->name('post.show');
 
+Route::get('/create', [PostController::class,'create'])->name('post.create');
