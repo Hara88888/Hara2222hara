@@ -7,10 +7,13 @@
     </head>
     <body>
         <h1>ブログ投稿一覧</h1>
+        <h2 class='create'>
+            <a href='/posts/create'>作成</a>
+</h2>
         <div class='posts'>
             @foreach($posts as $post)
             <div class='post'>
-                <a href="{{route('post.show',['id'=>$post->id])}}">
+                <a href="/posts/{{ $post->id}}">
                 <h2 class='title'>{{ $post ->title }}</h2>
                 </a>
                 <p class='body'>{{ $post ->body}}</p>

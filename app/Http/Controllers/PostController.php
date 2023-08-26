@@ -12,14 +12,18 @@ class PostController extends Controller
         return view('posts/index')->with(['posts' => $post->getPaginateByLimit()]);
         
     }
-   public function show($id)
+   public function show(Post $post)
 {
-    $post = Post::find($id);
-    return view('posts.show',['post'=>$post]);
-
+    return view('posts.show')->with(['post'=>$post]);
 }
+
 public function create(){
     return view('posts/create');
 }
 
+public function store(Request $request, Post $post){
+   $input = $request['post'];
+   $post->fill($input)->save();
+    return redirect('/posts/' .$post->id);
+}
 }
