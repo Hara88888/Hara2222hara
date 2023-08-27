@@ -32,4 +32,10 @@ public function edit(Post $post){
     
 }
 
+public function update(Post $post, PostRequest $request){
+     $input = $request['post'];
+     $post->fill($input)->update();
+       return redirect('/posts/' .$post->id);
+}
+
 }

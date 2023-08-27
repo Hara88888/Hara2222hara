@@ -7,7 +7,8 @@
 <title>ブログ投稿編集画面</title>
     </head>
     <body>
-         <form action="/posts" method="POST">
+         <form action="/posts/{{ $post->id}}" method="POST">
+    　　@method('PUT')
         @csrf
         <h1>ブログ投稿編集画面</h1>
             <h1>タイトル</h1>
