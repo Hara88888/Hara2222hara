@@ -8,7 +8,7 @@
     <body>
         <h1>ブログ投稿一覧</h1>
         <h2 class='create'>
-            <a href='/posts/create'>作成</a>
+            <a href='/posts/create'>投稿作成</a>
 </h2>
         <div class='posts'>
             @foreach($posts as $post)

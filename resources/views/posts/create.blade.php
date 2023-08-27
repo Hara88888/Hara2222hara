@@ -7,13 +7,23 @@
 <title>ブログ投稿作成画面</title>
     </head>
     <body>
-         <form method="POST" action="/posts">
+         <form action="/posts" method="POST">
         @csrf
         <h1>ブログ投稿作成画面</h1>
             <h1>タイトル</h1>
             <input type="text" name="post[title]" placeholder="タイトル">
+            <div class="error1">
+               @if($errors->has('post.title'))
+　　　　　　　　 <p>{{$errors->first('post.title')}}</p>
+　　　　　　　　@endif
+            </div>
             <h1>本文</h1>
             <textarea name="post[body]" placeholder="本文を入力"></textarea>
+             <div class="error2">
+               @if($errors->has('post.body'))
+　　　　　　　　 <p>{{$errors->first('post.body')}}</p>
+　　　　　　　　@endif
+            </div>
             <br>
             <button type="submit"  value="store">保存</button>
         </form>
