@@ -18,6 +18,7 @@
                 <h2 class='title'>{{ $post ->title }}</h2>
                 </a>
                 <p class='body'>{{ $post ->body}}</p>
+                 <a href='/posts/{{$post ->id}}/edit'>編集する</a>
         </div>
         @endforeach
         </div>
