@@ -11,6 +11,7 @@
             <a href='/posts/create'>投稿作成</a>
 </h2>
         <div class='posts'>
+            <h1>投稿一覧</h1>
             @foreach($posts as $post)
             <div class='post'>
                 <a href="/posts/{{ $post->id}}">
