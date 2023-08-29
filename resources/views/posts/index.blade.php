@@ -19,6 +19,11 @@
                 </a>
                 <p class='body'>{{ $post ->body}}</p>
                  <a href='/posts/{{$post ->id}}/edit'>編集する</a>
+                <form action="/posts/{{$post ->id}}" id="form_{{$post->id }}" method="POST">
+                    @method('DELETE')
+                    @csrf 
+                    <button type="button" onclick="deleteSubmit({{$post->id}})">削除</button>
+                </form> 
         </div>
         @endforeach
         </div>
@@ -27,3 +32,13 @@
         </div>
     </body>
 </html>
+<script>
+    function deleteSubmit(id){
+        'use strict'
+        var res=confirm("削除しますか？");
+    if(res==true){
+         document.getElementById(`form_${id}`).submit();
+    }else{
+        
+    }
+    }</script>
